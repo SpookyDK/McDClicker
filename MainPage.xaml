@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="McDClicker.MainPage">
+             
+    
+    
+    <ContentPage.Resources>
+
+        <Color x:Key="MyBackground">#ffd700</Color>
+        <Color x:Key="MyBrown1">#f9f5f5</Color>
+        <Color x:Key="MyBrown2">#f2d78d</Color>
+        <Color x:Key="MyBrown3">#f2d78d</Color>
+        <Color x:Key="MyBrown4">#000000</Color>
+
+
+
+    </ContentPage.Resources>
+    
+
+    <Grid
+        RowDefinitions="*,*,*,*,*,*,*"
+        ColumnDefinitions="1*,0.6*,0.3*,1*,0.8*"
+        BackgroundColor="{StaticResource MyBackground}"
+        ColumnSpacing ="0"
+        RowSpacing="0"
+        >
+        <!-- Nugget stuff -->
+        <Label
+            x:Name="NPCTEXT"
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="1 NPC"
+            FontSize="40"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            TextColor="{StaticResource MyBrown4}"
+            Grid.ColumnSpan="2"
+            >
+            
+            
+        </Label>
+
+        <ImageButton Source="nugget.png"
+            x:Name="NuggetKnap"
+            Grid.Column="0"
+            Grid.Row="2"
+            Grid.RowSpan="3"
+           
+            Aspect="AspectFit"
+            Grid.ColumnSpan="2"
+            ScaleX="1"
+            ScaleY="1"
+            Pressed="NuggetKnap_Clicked"
+            Released="NuggetKnap_Released"
+            BackgroundColor="{StaticResource MyBackground}"
+                     
+            >
+
+
+        </ImageButton>
+
+        <Label
+            x:Name="NuggetDisplay"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            
+            Text="Click på Nugget"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            FontSize="40"
+            TextColor="{StaticResource MyBrown4}"
+            >
+            
+            
+            
+        </Label>
+
+
+        <!-- Købs Menu -->
+        <Button
+            x:Name="Arbejder"
+            Grid.Column="3"
+            Grid.Row="0"
+            Text="Underbetalt Arbejder  +1 NPC"
+            Clicked="Arbejder_Clicked"
+            FontSize="30"
+            BackgroundColor="{StaticResource MyBrown1}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="4"
+            BorderColor="Black"
+            >
+            
+            
+        </Button>
+        <Button
+            x:Name="FritureGrydeKnap"
+            Grid.Column="3"
+            Grid.Row="1"
+            Text="Friture gryde  +2 NPC"
+            Clicked="FritureGrydeKnap_Clicked"
+            FontSize="30"
+            BackgroundColor="{StaticResource MyBrown1}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+           BorderWidth="4"
+            BorderColor="Black"
+            >
+
+
+        </Button>
+        <Button
+            x:Name="GrillKnap"
+            Grid.Column="3"
+            Grid.Row="2"
+            Text="Grill  +5 NPC"
+            Clicked="GrillKnap_Clicked"
+            FontSize="30"
+            BackgroundColor="{StaticResource MyBrown1}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="4"
+            BorderColor="Black"
+            >
+
+
+        </Button>
+        <Button
+            x:Name="ManagerKnap"
+            Grid.Column="3"
+            Grid.Row="3"
+            Text="Manager +10 NPC"
+            Clicked="ManagerKnap_Clicked"
+            FontSize="30"
+            BackgroundColor="{StaticResource MyBrown1}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="4"
+            BorderColor="Black"
+            >
+
+
+        </Button>
+        <Button
+            x:Name="NuggetBuyKnap"
+            Grid.Column="3"
+            Grid.Row="4"
+            Text="Nuggets  + 20 NPC"
+            Clicked="NuggetBuyKnap_Clicked"
+            FontSize="30"
+            BackgroundColor="{StaticResource MyBrown1}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="4"
+            BorderColor="Black"
+            >
+
+
+        </Button>
+        <Button
+            x:Name="BestillingsKnap"
+            Grid.Column="3"
+            Grid.Row="5"
+            Text="Bestillings skærme  +50 NPC"
+            Clicked="BestillingsKnap_Clicked"
+            FontSize="30"
+            BackgroundColor="{StaticResource MyBrown1}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="4"
+            BorderColor="Black"
+            >
+
+
+        </Button>
+        <Button
+            x:Name="Resturant"
+            Grid.Column="3"
+            Grid.Row="6"
+            Text="Resturant   +2000 NPC"
+            Clicked="Resturant_Clicked"
+            FontSize="30"
+            BackgroundColor="{StaticResource MyBrown1}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="4"
+            BorderColor="Black"
+            
+            >
+
+
+        </Button>
+        <!-- Antal viser -->
+        <Button
+            x:Name="ArbejderAntal"
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="0"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown2}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+            
+        </Button>
+        <Button
+            x:Name="GrydeAntal"
+            Grid.Row="1"
+            Grid.Column="2"
+            Text="0"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown2}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="GrillAntal"
+            Grid.Row="2"
+            Grid.Column="2"
+            Text="0"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown2}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="ManagerAntal"
+            Grid.Row="3"
+            Grid.Column="2"
+            Text="0"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown2}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="NuggetAntal"
+            Grid.Row="4"
+            Grid.Column="2"
+            Text="0"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown2}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="BestillingsAntal"
+            Grid.Row="5"
+            Grid.Column="2"
+            Text="0"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown2}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="ResturantAntal"
+            Grid.Row="6"
+            Grid.Column="2"
+            Text="0"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown2}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <!-- Pris viser -->
+        <Button
+            x:Name="ArbejderPrisKnap"
+            Grid.Row="0"
+            Grid.Column="4"
+            Text="50 pr stk"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown3}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="GrydePrisKnap"
+            Grid.Row="1"
+            Grid.Column="4"
+            Text="500 pr stk"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown3}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="GrillPrisKnap"
+            Grid.Row="2"
+            Grid.Column="4"
+            Text="2000 pr stk"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown3}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="ManagerPrisKnap"
+            Grid.Row="3"
+            Grid.Column="4"
+            Text="50000 pr stk"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown3}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            
+            >
+
+        </Button>
+        <Button
+            x:Name="NuggetPrisKnap"
+            Grid.Row="4"
+            Grid.Column="4"
+            Text="100000 pr stk"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown3}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            >
+
+        </Button>
+        <Button
+            x:Name="BestillingsPrisKnap"
+            Grid.Row="5"
+            Grid.Column="4"
+            Text="500000 pr stk"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown3}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            >
+
+        </Button>
+        <Button
+            x:Name="ResturantPrisKnap"
+            Grid.Row="6"
+            Grid.Column="4"
+            Text="10000000 pr stk"
+            FontSize="40"
+            BackgroundColor="{StaticResource MyBrown3}"
+            TextColor="{StaticResource MyBrown4}"
+            CornerRadius="0"
+            Margin="0"
+            Padding="0"
+            BorderWidth="0"
+            >
+
+        </Button>
+
+
+
+
+    </Grid>
+
+</ContentPage>
