@@ -5,7 +5,7 @@ namespace McDClicker;
 public partial class MainPage : ContentPage
 {
 
-    double Nugget = 100000;
+    double Nugget = 0;
     double NuggetsPerClick = 1;
     double Arbejdere = 0;
     double Gryder = 0;
